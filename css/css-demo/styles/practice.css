@@ -10,3 +10,9 @@
 .list {
 	font-size: 0.8em;
 }
+a:hover { 
+    background-color: yellow;
+}
+ul li {
+	list-style-type: hiragana;
+}
