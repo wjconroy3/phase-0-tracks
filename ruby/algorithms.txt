@@ -16,3 +16,4 @@ EMAIL CHECKING ALGORITHM
 4. Search for account information box, type in account name, and hit ENTER.
 5. Search for password box, type in password, and hit ENTER.
 6. Search emails for UNREAD messages and open them.
+7. Read emails and react to them as necessary.
