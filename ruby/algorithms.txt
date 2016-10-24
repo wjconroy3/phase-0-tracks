@@ -1,0 +1,18 @@
+ROBOT ELEVATOR ALGORITHM
+
+1.  Determine which floor you would like to go to.
+2.	Search for current floor label on outside of elevator door frame.
+3.  Subtract current floor from desired floor.  If negative, push UP arrow.  If positive push DOWN arrow.
+4.  When elevator doors open, enter the elevator.
+5.  Visually scan the buttons for the desired floor.  If the desired floor is floor 1, search for a G button if 1 cannot be found.  Press the button that matches the desired floor.
+6.  Standby as the elevator doors close.
+7.  Whenever the doors open, visually search for floor label on the door frame.  If it does not match desired floor stay in elevator.
+8.	When the number on the door frame matches the desired floor, exit the elevator.
+
+EMAIL CHECKING ALGORITHM
+1. Search desktop for Google Chrome.  When found, click on it twice.
+2. Search for browser bar.  Click on bar twice when found.
+3. Type "www.gmail.com" into the browser bar and hit ENTER on the keyboard.
+4. Search for account information box, type in account name, and hit ENTER.
+5. Search for password box, type in password, and hit ENTER.
+6. Search emails for UNREAD messages and open them.
