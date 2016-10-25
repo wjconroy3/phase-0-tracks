@@ -1,66 +1,74 @@
-p "What is your name?"
-name = gets.chomp
+p "How many employees will you be processing?"
+amount = gets.chomp
 
-p "How old are you?"
-age = gets.chomp
+while amount.to_i > 0
 
-p "What year were you born?"
-year = gets.chomp
+	amount = amount.to_i - 1
 
-p "Our company cafeteria serves garlic bread.  Should we order some for you? (y/n)"
-garlic = gets.chomp
+	p "What is your name?"
+	name = gets.chomp
 
-p "Would you like to enroll in the company's health insurance? (y/n)"
-insurance = gets.chomp
+	p "How old are you?"
+	age = gets.chomp
 
-too_old = false
-answer = false
-real_age = false
+	p "What year were you born?"
+	year = gets.chomp
 
-if
-	year.to_i + age.to_i == 2015 ||	year.to_i + age.to_i == 2016 
-then
-	real_age = true
-end
+	p "Our company cafeteria serves garlic bread.  Should we order some for you? (y/n)"
+	garlic = gets.chomp
 
-if 
-	age.to_i > 90 
-then
-	too_old = true
-end
+	p "Would you like to enroll in the company's health insurance? (y/n)"
+	insurance = gets.chomp
 
-if
-	name == "Drake Cula" || name == "Tu Fang"
-	
+	too_old = false
+	answer = false
+	real_age = false
+
+	if
+		year.to_i + age.to_i == 2015 ||	year.to_i + age.to_i == 2016 
 	then
-		puts "Definitely a vampire"
-		answer = true
-	
-elsif
-	name == "" || year == "" || age == "" || garlic == "" || insurance == ""
-	
+		real_age = true
+	end
+
+	if 
+		age.to_i > 90 
 	then
-		puts "Results inconclusive."
-	
-elsif 	
-	
-	real_age == true && garlic == "y" && too_old == false && insurance == "y"
-	
-	then
-		puts "Probably not a vampire."
-		answer = true
-elsif 
-	real_age == false && garlic == "n" && too_old == true && insurance == "n"
-	
-	then
-		puts "Almost certainly a vampire."
-		answer = true
-	
-elsif 
-	
-	real_age == false || garlic == "n" || insurance == "n"
-	
-	then
-		puts "Probably a vampire."
-		answer = true
+		too_old = true
+	end
+
+	if
+		name == "Drake Cula" || name == "Tu Fang"
+		
+		then
+			puts "Definitely a vampire"
+			answer = true
+		
+	elsif
+		name == "" || year == "" || age == "" || garlic == "" || insurance == ""
+		
+		then
+			puts "Results inconclusive."
+		
+	elsif 	
+		
+		real_age == true && garlic == "y" && too_old == false && insurance == "y"
+		
+		then
+			puts "Probably not a vampire."
+			answer = true
+	elsif 
+		real_age == false && garlic == "n" && too_old == true && insurance == "n"
+		
+		then
+			puts "Almost certainly a vampire."
+			answer = true
+		
+	elsif 
+		
+		((real_age == false || too_old == true) && garlic == "n" ) || ((real_age == false || too_old == true) && insurance == "n")
+		
+		then
+			puts "Probably a vampire."
+			answer = true
+	end
 end
