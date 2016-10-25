@@ -30,17 +30,18 @@ then
 end
 
 if
-	name == "" || year == "" || age == "" || garlic == "" || insurance == ""
-	
-	then
-		puts "Results inconclusive."
-elsif
-	
 	name == "Drake Cula" || name == "Tu Fang"
 	
 	then
 		puts "Definitely a vampire"
 		answer = true
+	
+elsif
+	name == "" || year == "" || age == "" || garlic == "" || insurance == ""
+	
+	then
+		puts "Results inconclusive."
+	
 elsif 	
 	
 	real_age == true && garlic == "y" && too_old == false && insurance == "y"
