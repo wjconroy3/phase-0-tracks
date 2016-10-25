@@ -29,36 +29,37 @@ then
 	too_old = true
 end
 
-if 
-	real_age == true && garlic == "y" && too_old == false && insurance == "y"
-then
-	puts "Probably not a vampire."
-	answer = true
-end
-
-if 
-	real_age == false || garlic == "n" || insurance == "n"
-then
-	puts "Probably a vampire."
-	answer = true
-end
-
-if 
-	real_age == false && garlic == "n" && insurance == "n"
-then
-	puts "Almost certainly a vampire."
-	answer = true
-end
-
 if
+	name == "" || year == "" || age == "" || garlic == "" || insurance == ""
+	
+	then
+		puts "Results inconclusive."
+elsif
+	
 	name == "Drake Cula" || name == "Tu Fang"
-then
-	puts "Definitely a vampire"
-	answer = true
-end
-
-if 
-	name == "" || year.to_i == "" || age.to_i == "" || garlic == "" || insurance == ""
-then
-	puts "Results inconclusive."
+	
+	then
+		puts "Definitely a vampire"
+		answer = true
+elsif 	
+	
+	real_age == true && garlic == "y" && too_old == false && insurance == "y"
+	
+	then
+		puts "Probably not a vampire."
+		answer = true
+elsif 
+	real_age == false && garlic == "n" && too_old == true && insurance == "n"
+	
+	then
+		puts "Almost certainly a vampire."
+		answer = true
+	
+elsif 
+	
+	real_age == false || garlic == "n" || insurance == "n"
+	
+	then
+		puts "Probably a vampire."
+		answer = true
 end
