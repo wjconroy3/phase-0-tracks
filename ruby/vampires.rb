@@ -20,6 +20,26 @@ while amount.to_i > 0
 	p "Would you like to enroll in the company's health insurance? (y/n)"
 	insurance = gets.chomp
 
+sunshine_allergy = FALSE
+allergies = FALSE
+
+puts "Do you have any allergies?  Please enter one at a time.  When you are done, type DONE."
+answer = gets.chomp!
+
+until allergies == TRUE
+
+	if answer == "sunshine"
+		allergies = TRUE
+		sunshine_allergy = TRUE
+	elsif answer == "DONE"
+		allergies = TRUE
+		puts "Thank you!"
+	else
+		puts "Anything else?"
+		answer = gets.chomp
+	end
+end
+		
 	too_old = false
 	answer = false
 	real_age = false
@@ -51,7 +71,7 @@ while amount.to_i > 0
 		
 	elsif 	
 		
-		real_age == true && garlic == "y" && too_old == false && insurance == "y"
+		real_age == true && garlic == "y" && too_old == false && insurance == "y" && sunshine_allergy == FALSE
 		
 		then
 			puts "Probably not a vampire."
@@ -65,10 +85,12 @@ while amount.to_i > 0
 		
 	elsif 
 		
-		((real_age == false || too_old == true) && garlic == "n" ) || ((real_age == false || too_old == true) && insurance == "n")
+		(((real_age == false || too_old == true) && garlic == "n" ) || ((real_age == false || too_old == true) && insurance == "n")) || sunshine_allergy == TRUE
 		
 		then
 			puts "Probably a vampire."
 			answer = true
+	else
+		puts "Results inconclusive."
 	end
 end
