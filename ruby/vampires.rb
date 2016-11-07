@@ -1,9 +1,9 @@
 p "How many employees will you be processing?"
-amount = gets.chomp
+amount = gets.chomp.to_i
+x = 0
 
-while amount.to_i > 0
-
-	amount = amount.to_i - 1
+while x < amount do
+	x += 1
 
 	p "What is your name?"
 	name = gets.chomp
@@ -16,80 +16,37 @@ while amount.to_i > 0
 
 	p "Our company cafeteria serves garlic bread.  Should we order some for you? (y/n)"
 	garlic = gets.chomp
+	garlic = garlic.downcase
 
 	p "Would you like to enroll in the company's health insurance? (y/n)"
 	insurance = gets.chomp
+	insurance = insurance.downcase
 
-sunshine_allergy = FALSE
-allergies = FALSE
+	puts "Do you have any allergies? When you are done, type DONE."
 
-puts "Do you have any allergies?  Please enter one at a time.  When you are done, type DONE."
-answer = gets.chomp!
+	allergies = nil
+	allergies = gets.chomp
 
-until allergies == TRUE
-
-	if answer == "sunshine"
-		allergies = TRUE
-		sunshine_allergy = TRUE
-	elsif answer == "DONE"
-		allergies = TRUE
-		puts "Thank you!"
-	else
-		puts "Anything else?"
-		answer = gets.chomp
+	until allergies == "DONE" || allergies == "sunshine" do
+		allergies = gets.chomp.to_s
 	end
-end
-		
-	too_old = false
-	answer = false
+
+	puts "Thank you!"
+
 	real_age = false
 
-	if
-		year.to_i + age.to_i == 2015 ||	year.to_i + age.to_i == 2016 
-	then
+	if (year.to_i + age.to_i == 2015 || 2016) && age.to_i < 90 
 		real_age = true
 	end
 
-	if 
-		age.to_i > 90 
-	then
-		too_old = true
-	end
-
-	if
-		name == "Drake Cula" || name == "Tu Fang"
-		
-		then
-			puts "Definitely a vampire"
-			answer = true
-		
-	elsif
-		name == "" || year == "" || age == "" || garlic == "" || insurance == ""
-		
-		then
-			puts "Results inconclusive."
-		
-	elsif 	
-		
-		real_age == true && garlic == "y" && too_old == false && insurance == "y" && sunshine_allergy == FALSE
-		
-		then
-			puts "Probably not a vampire."
-			answer = true
-	elsif 
-		real_age == false && garlic == "n" && too_old == true && insurance == "n"
-		
-		then
-			puts "Almost certainly a vampire."
-			answer = true
-		
-	elsif 
-		
-		(((real_age == false || too_old == true) && garlic == "n" ) || ((real_age == false || too_old == true) && insurance == "n")) || sunshine_allergy == TRUE
-		
-		then
-			puts "Probably a vampire."
-			answer = true
+	if name == "Drake Cula" || name == "Tu Fang"
+		puts "Definitely a vampire"
+	elsif 	real_age == false && garlic == "n" && insurance == "n"
+		puts "Almost certainly a vampire."
+	elsif (real_age == false && garlic == "n" ) || (real_age == false && insurance == "n") || allergies == "sunshine"
+		puts "Probably a vampire."
+	elsif 	real_age == true && garlic == "y" && insurance == "y"
+		puts "Probably not a vampire."
 	else
 		puts "Results inconclusive."
 	end
