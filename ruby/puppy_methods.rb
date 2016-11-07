@@ -1,4 +1,5 @@
 ## Release 0: Add Behavior to a Class ##
+## Release 1: Declare an Initialize Method ##
 
 class Puppy
 
@@ -25,6 +26,10 @@ class Puppy
 	puts "GGGRRRRRR!!!" 	
   end
 
+  def initialize
+  	puts "Initializing new puppy instance ..."
+  end
+
 end
 
 patches = Puppy.new
@@ -38,4 +43,6 @@ patches.roll_over
 puts patches.dog_years(3)
 
 patches.protect()
+
+
 
