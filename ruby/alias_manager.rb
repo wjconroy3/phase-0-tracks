@@ -8,16 +8,16 @@
 
 #Input real name, convert to array
 
-name_input = "Bill Conroy".split
+def name_swap(x)
+	#Split name
+	name_input = x.split
+	#Swap First and Last Name
+	name_input[0], name_input[1] = name_input[1], name_input[0]
+	#Rejoin name after swapping
+	name_input = name_input.join(" ")
+end
 
-#Swap First and Last Name
-name_input[0], name_input[1] = name_input[1], name_input[0]
-
-#Rejoin name after swapping
-name_input = name_input.join(" ")
-
-#Length of name definition
-length = name_input.length
+name_input = name_swap("Bill Conroy")
 
 #Vowels and consonants list
 vowels = "aeiouaAEIOUA"
@@ -56,16 +56,7 @@ until entered_name == "EXIT"
 	else
 		real_name << entered_name
 
-		name_input = entered_name.split
-
-		#Swap First and Last Name
-		name_input[0], name_input[1] = name_input[1], name_input[0]
-
-		#Rejoin name after swapping
-		name_input = name_input.join(" ")
-
-		#Length of name definition
-		length = name_input.length
+		name_input = name_swap(entered_name)
 
 		#Vowels and consonants list
 		vowels = "aeiouaAEIOUA"
