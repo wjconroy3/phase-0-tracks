@@ -45,4 +45,34 @@ puts patches.dog_years(3)
 patches.protect()
 
 
+### Release 2: Write Your Own Class, and Experiment!###
 
+class Cat
+
+	def meow()
+		puts "Meoowww!"
+	end
+
+	def furball(x)
+		x.times do
+			puts "HACK!"
+		end
+		puts "Your cat hacked up #{x} furballs!"
+	end
+
+	def initialize
+		puts "Your #{self} cat is initializing..."
+	end
+end
+
+cats = []
+
+50.times do |x| 
+	x = Cat.new
+	cats << x
+end
+
+cats.each do |y|
+	y.furball(2)
+	y.meow()
+end
